@@ -35,27 +35,12 @@
                 <div class="page-header" id="banner">
                     <div class="row" id="app">
                         <div class="col-md-6">
-                            <h4>Código</h4>
-                            <script type="text/javascript">
-		                    window.onload = function() {
- 		                    var myInput = document.getElementById('code');
-  		                    myInput.onpaste = function(e) {
-    	                    e.preventDefault();
-    	                    alert("esta acción está prohibida");
-  		                    }
-  
-                      		myInput.oncopy = function(e) {
-    	                    e.preventDefault();
-    	                    alert("esta acción está prohibida");	
-    	                    }
-		                    }
-		                    </script>
                             <form id="formCompiler" method="post">
                                 <div class="form-group">
                                     <textarea name="code" id="code" rows="22" style="width: 100%;"></textarea>
                                     <input type="hidden" name="_token" value="0MRc0wBkomNUyJValvg6nBz6dSIs4ulww7cAvNP6">
                                 </div>
-                                <asp:Button ID="btnCompilar" runat="server" Text="Compilar" OnClick="btnCompilar_Click" />
+                                <asp:Button ID="btnCompilar" runat="server" Text="Compilar" OnClick="btnCompilar_Click" CssClass="bg-primary" />
                             </form>
                         </div>
                         <div id="term"></div>
@@ -77,7 +62,6 @@
                                 <!--  <li><a href="#">Twitter</a></li>  -->
                                 <!-- <li><a href="#">GitHub</a></li>  -->
                             </ul>
-                           <!--  <p>Jorge Suaza</p>  -->
                         </div>
                     </div>
                 </footer>
@@ -96,35 +80,6 @@
                             /*{selectedLine: 1}*/
                     );
                 });
-
-
-                /*$(document).ready(function() {
-                    $("#formCompiler").submit(function (e) {
-                        e.preventDefault();
-
-                        $.ajax({
-                            url: '/compile',
-                            type: 'POST',
-                            dataType: 'json',
-                            async: true,
-                            data: $('#formCompiler').serialize(),
-                            success: function success(data, status) {
-                                console.log(data);
-                                var output = "";
-
-                                for (var i = 0; i < data.length; i++) {
-                                    output += (data[i].trim() + "\n");
-                                }
-
-                                $('#output').html(output);
-
-                            },
-                            error: function error(xhr, textStatus, errorThrown) {
-                                alert('Remote sever unavailable. Please try later');
-                            }
-                        });
-                    });
-                });*/
 
             </script>
         </body>
